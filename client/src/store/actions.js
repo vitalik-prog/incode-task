@@ -1,2 +1,2 @@
-export * as profileActionCreator from './profile/actions';
-export * as threadActionCreator from './thread/actions';
+export * as tickerActionCreator from './ticker/actions';
+export * as modalsActionCreator from './modal/actions';

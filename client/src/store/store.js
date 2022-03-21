@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-import { profileReducer, threadReducer } from './root-reducer';
+import { socket as socketMiddleware } from 'src/middlewares/socket/index';
+import { tickerReducer, modalReducer } from './root-reducer';
 
 const store = configureStore({
   reducer: {
-    profile: profileReducer,
-    posts: threadReducer
-  }
+    ticker: tickerReducer,
+    modal: modalReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(socketMiddleware),
 });
 
 export default store;

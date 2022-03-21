@@ -1,31 +1,24 @@
-import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction } from '@reduxjs/toolkit';
 
 const ActionType = {
-  INIT: 'init',
-  SET_TICKERS: 'set-tickers',
-  CHANGE_UPTIME: 'change-uptime',
+  OPEN: 'modal/open',
+  CLOSE: 'modal/close',
 };
 
-const initialize = createAction(ActionType.INIT, data => ({
+const open = createAction(ActionType.OPEN, (name, params) => ({
   payload: {
-    data,
+    name,
+    params,
   }
 }));
 
-const setTickers = createAction(ActionType.SET_TICKERS, tickers => ({
+const close = createAction(ActionType.CLOSE, () => ({
   payload: {
-    tickers,
-  }
-}));
-
-const setUptime = createAction(ActionType.CHANGE_UPTIME, uptime => ({
-  payload: {
-    uptime,
+    name: false,
   }
 }));
 
 export {
-  initialize,
-  setTickers,
-  setUptime,
+  open,
+  close,
 };

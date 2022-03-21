@@ -1,19 +1,20 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { setTickers, initialize } from './actions';
+import { open, close } from './actions';
 
 const initialState = {
-  list: [],
-  interval: null,
+  name: false,
+  params: null,
 };
 
 const reducer = createReducer(initialState, builder => {
-  builder.addCase(initialize, (state, action) => {
-    const { data } = action.payload;
-    state.interval = data.interval;
+  builder.addCase(open, (state, action) => {
+    return {
+      ...state,
+      ...action.payload,
+    };
   });
-  builder.addCase(setTickers, (state, action) => {
-    const { tickers } = action.payload;
-    state.list = tickers;
+  builder.addCase(close, (state, action) => {
+    state.name = false;
   });
 });
 

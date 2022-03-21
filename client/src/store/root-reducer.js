@@ -1,2 +1,2 @@
-export { reducer as profileReducer } from './profile/reducer';
-export { reducer as threadReducer } from './thread/reducer';
+export { reducer as tickerReducer } from './ticker/reducer';
+export { reducer as modalReducer } from './modal/reducer';
