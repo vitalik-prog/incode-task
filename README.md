@@ -1,3 +1,9 @@
+Added functionality:
+1. positive or negative changes in the prices highlighting;
+2. possibility to specify interval time by user;
+3. possibility to create/delete watching group;
+4. possibility to change list of tickers.
+
 
 # React Test Task
 
